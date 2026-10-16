@@ -115,7 +115,3 @@ The complete executable pipeline is maintained in a private repository. Access m
 
 The figures and documentation in this repository are provided to communicate the scientific workflow and representative outcomes. Public visibility does not grant permission to reuse the underlying implementation.
 
-## Author
-
-**Khatereh Kashmari**  
-Molecular simulation, polymer network analysis, and computational materials research
