@@ -17,15 +17,6 @@ This project therefore treats each curing snapshot as both:
 
 The resulting graph representation makes it possible to monitor the transition from disconnected monomers to a connected, cycle-rich network and to test which structural descriptors provide information beyond conversion alone.
 
-## Case Study
-
-The demonstrated system is a three-component acrylate formulation analyzed across five independent curing trajectories.
-
-| Component | Role in the analyzed formulation | Molecules in the simulated system | Weight fraction |
-|---|---|---:|---:|
-| PEGDA | Difunctional network-forming component | 120 | 70.81% |
-| GMA | Reactive monofunctional component | 75 | 24.36% |
-| AUD | Higher-mass multifunctional component | 7 | 4.83% |
 
 The framework is not conceptually restricted to this formulation. Species definitions, molecular weights, replicate identifiers, and snapshot locations are supplied separately for each analysis.
 
@@ -66,23 +57,6 @@ flowchart LR
 
 ## Molecular-Graph Representation
 
-For a molecular graph \(G=(V,E)\):
-
-- \(V\) is the set of original molecules.
-- \(E\) is the set of newly formed intermolecular covalent links.
-- Multiple edges between the same molecular pair are retained.
-- Connected components represent independently connected molecular clusters.
-- The largest connected component is used as an operational network or gel-like cluster.
-
-For a graph with \(|V|\) nodes, \(|E|\) edges, and \(C\) connected components, the cycle rank is
-
-$$
-\mu = |E| - |V| + C.
-$$
-
-Within a connected largest cluster, \(C=1\). The cycle rank therefore counts independent graph cycles rather than atomistic ring sizes.
-
-The **2-core** is obtained by repeatedly removing nodes with degree smaller than two. It provides an operational representation of the multiply connected network backbone. It is useful for distinguishing backbone participation from material connected through terminal or dangling branches.
 
 ## Principal Descriptors
 
