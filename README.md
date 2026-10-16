@@ -74,56 +74,6 @@ flowchart LR
 | Cluster-merging link | A new edge that joins two previously disconnected molecular components |
 | Cycle-forming link | A new edge whose endpoints are already connected by another graph path |
 
-## Representative Results
-
-Unless stated otherwise, points in the first four figures are averages over five independent curing trajectories and error bars show \(\pm 1\) sample standard deviation. The highest-conversion point combines the final available snapshot from each replicate.
-
-### Growth of the largest molecular cluster
-
-![Component incorporation into the largest connected cluster](docs/figures/largest_cluster_incorporation.png)
-
-**Figure 1. Component incorporation into the largest connected molecular cluster.** PEGDA and AUD join the dominant cluster earlier than GMA in this formulation. GMA incorporation increases more gradually, demonstrating that total conversion and component-level network participation are not interchangeable measures.
-
-### Formation of the multiply connected backbone
-
-![Component incorporation into the network 2-core](docs/figures/network_2core_incorporation.png)
-
-**Figure 2. Component incorporation into the molecular-network 2-core.** Membership in the 2-core requires stronger connectivity than membership in the largest cluster. The delay between Figures 1 and 2 distinguishes initial cluster attachment from incorporation into a multiply connected backbone.
-
-### Evolution of independent network cycles
-
-![Cycle-rank evolution across conversion](docs/figures/cycle_rank_evolution.png)
-
-**Figure 3. Cycle rank of the largest molecular cluster.** Independent cycles accumulate nonlinearly as conversion increases. The growth of cycle rank reflects progressive closure of redundant graph paths after the network begins to form.
-
-### Chemical composition of network-forming links
-
-![Chemical composition of newly formed intermolecular links](docs/figures/link_pair_composition.png)
-
-**Figure 4. Chemical composition of intermolecular network links.** PEGDA–PEGDA links dominate the analyzed formulation, while GMA–PEGDA links make an increasingly important contribution. Minor link classes remain distinguishable without being combined into a generic category.
-
-### Cluster growth versus cycle formation
-
-![Cumulative cluster-merging and cycle-forming links](docs/figures/cluster_merging_vs_cycle_formation.png)
-
-**Figure 5. Cumulative classification of reaction-created intermolecular links for one representative trajectory.** Early links primarily merge disconnected clusters. Cycle-forming links become more prominent after a connected network has developed. The highlighted interval is an operational gel interval based on the maximum size of the second-largest molecular cluster.
-
-### Exploratory topology–property relationship
-
-![Glass-transition temperature versus 2-core link density](docs/figures/tg_vs_2core_link_density.png)
-
-**Figure 6. Glass-transition temperature versus 2-core backbone link density for one representative trajectory.** Color denotes conversion. This view tests whether a graph-derived backbone measure organizes property evolution in a way that is not visible from conversion alone. It is an exploratory relationship, not evidence of causality; inference requires independent replicates and appropriate uncertainty analysis.
-
-## Interpreting the Network Evolution
-
-The descriptors capture different physical stages of curing:
-
-- **Early conversion:** most molecules remain isolated or belong to small clusters. New links mainly merge previously disconnected components.
-- **Network emergence:** the largest component grows rapidly and the second-largest component reaches an operational maximum near the connectivity transition.
-- **Backbone development:** an increasing portion of the largest cluster survives 2-core pruning, indicating the development of redundant connectivity.
-- **Late conversion:** cycle-forming reactions become increasingly important, cycle rank grows, and component-specific incorporation approaches a plateau.
-
-These stages should not be collapsed into a single conversion value. Largest-cluster membership, 2-core participation, cycle formation, and component chemistry answer different structural questions.
 
 ## Topology–Property Modeling Strategy
 
@@ -152,34 +102,6 @@ The analysis was designed around the following practices:
 - Carry replicate variability into plotted uncertainty.
 - Avoid treating snapshots from a single trajectory as independent samples.
 
-## Important Limitations
-
-- The molecular 2-core is an operational backbone descriptor, not a rigorous phantom-network or elastically active strand calculation.
-- Molecular cycle rank counts independent graph cycles but does not provide atomistic ring-size distributions.
-- Exact reaction order cannot be reconstructed when several reactions occur between saved snapshots. Within-snapshot ordering is therefore not interpreted as chemical chronology.
-- The operational gel interval is a graph-based indicator and should not automatically be equated with an experimentally measured gel point.
-- Topology–property correlations do not establish causation.
-- Conclusions about uncertainty require genuinely independent replicate trajectories.
-- Chemistry-specific kinetic interpretation requires a reaction model with appropriate chemistry-specific energetics and attempt frequencies.
-
-## Public Repository Contents
-
-```text
-.
-├── README.md
-├── NOTICE.md
-└── docs/
-    └── figures/
-        ├── largest_cluster_incorporation.png
-        ├── network_2core_incorporation.png
-        ├── cycle_rank_evolution.png
-        ├── link_pair_composition.png
-        ├── cluster_merging_vs_cycle_formation.png
-        └── tg_vs_2core_link_density.png
-```
-
-Raw LAMMPS structures, trajectories, reaction templates, configuration files, and executable analysis scripts are intentionally excluded from the public showcase.
-
 ## Tools and Methods
 
 - **LAMMPS** for molecular-dynamics and curing simulations
@@ -196,10 +118,4 @@ The figures and documentation in this repository are provided to communicate the
 ## Author
 
 **Khatereh Kashmari**  
-Molecular simulation, polymer-network analysis, and computational materials research
-
-## Copyright
-
-Copyright © 2026 Khatereh Kashmari. All rights reserved.
-
-No permission is granted to copy, modify, redistribute, sublicense, or commercially use the documentation, figures, data, or underlying implementation without prior written permission from the copyright holder.
+Molecular simulation, polymer network analysis, and computational materials research
